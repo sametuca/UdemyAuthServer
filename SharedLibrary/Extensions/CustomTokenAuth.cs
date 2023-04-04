@@ -3,8 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SharedLibrary.Configurations;
 using SharedLibrary.Services;
 using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace SharedLibrary.Extensions
 {

@@ -44,10 +44,10 @@ namespace UdemyAuthServer.Service.Services
         private IEnumerable<Claim> GetClaims(UserApp userApp, List<String> audiences)
         {
             var userList = new List<Claim> {
-            new Claim(ClaimTypes.NameIdentifier,userApp.Id),
-            new Claim(JwtRegisteredClaimNames.Email, userApp.Email),
-            new Claim(ClaimTypes.Name,userApp.UserName),
-            new Claim(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString())
+            new(ClaimTypes.NameIdentifier,userApp.Id),
+            new(JwtRegisteredClaimNames.Email, userApp.Email),
+            new(ClaimTypes.Name,userApp.UserName),
+            new(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString())
             };
 
             userList.AddRange(audiences.Select(x => new Claim(JwtRegisteredClaimNames.Aud, x)));
